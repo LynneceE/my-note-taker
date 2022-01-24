@@ -3,7 +3,7 @@ const fs = require('fs');
 const express = require('express');
 const app = express();
 const path = require('path');
-//const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 // GET NOTES FROM DB.JSON
 const { notes } = require('./db/db.json'); 
@@ -26,7 +26,7 @@ app.get('./public/index.html',(req, res) => {
 
 // MAKE THE SERVER LISTEN (WITH DIRECT LINK)
 app.listen(3001, () => {
-    console.log('API server now on port 3001 http://localhost:3001');
+    console.log(`API sever now on port ${PORT}!`);
 });
 
 
