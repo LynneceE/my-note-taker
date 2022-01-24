@@ -1,6 +1,12 @@
-[
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
-]
+ 
+ {
+     "notes": [
+        {
+            "title":"My New Note",
+            "text":"Testing, testing 1 2 3",
+            "id": "8290463829465398017263542897437" 
+        }
+      ]
+ }
+
+ 
