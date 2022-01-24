@@ -15,20 +15,32 @@ app.use(express.json());
 // GENERATE UNIQUE ID FROM NPM INSTALLATION
 const generateUniqueId = require('generate-unique-id');
 
-// CREATING A NEW NOTE
-function newNote()
 
-// GET ROUTE FOR NOTES.HTML
-app.get('./public/index.html',(req, res) => {
-    res.sendFile(path.resolve(__dirname,'./public/index.html'));// path.resolve(from stack overflow) returns 'path not defined'
+
+// GET ROUTE FOR NOTES.HTML AND INDEX.HTML
+app.get('/',(req, res) => {
+    res.sendFile(path.join(__dirname,'./public/index.html'));// path.resolve(from stack overflow) returns 'path not defined'
 });
+
+app.get('notes',(req,res) => {
+    res.sendFile(path.join(__dirname,'./public/notes.html'));
+});
+
+app.get('api/notes', (req, res) => {
+    res.json(notes);
+});
+
+// POST ROUTES
+//app.post('')
+
+// CREATING A NEW NOTE
+//function newNote()
 
 
 // MAKE THE SERVER LISTEN (WITH DIRECT LINK)
-app.listen(3001, () => {
-    console.log(`API sever now on port ${PORT}!`);
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}! http://localhost:3001`);
 });
-
 
 
 
